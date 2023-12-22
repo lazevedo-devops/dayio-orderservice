@@ -14,3 +14,7 @@ app.get('/order', (req, res) => {
         "Hello World Order Service!"
     );
 });
+
+process.on('SIGINT', function() {
+    process.exit();
+});
