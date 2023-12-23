@@ -40,6 +40,43 @@ Keep-Alive: timeout=5
 Hello World Order Service!
 ```
 
+#### Docker Local Usage
+
+We also have in this repository the Dockerfile for use this API as container.
+
+
+```Build```
+
+```code
+docker build -t dayio-orderservice:main .
+```
+
+```Run```
+
+```code
+docker run -it -p 8080:8080 dayio-orderservice:main
+```
+
+After that the container will create a HTTP Tunnel to your locahost listening at 8080 port.
+
+#### Docker Remote Usage
+
+We set up at this repo a Github Actions Workflow that build automatically the Docker image and push to the Github Packages (Container Registry vinculated to this repo)
+
+```Pull```
+
+```code
+docker pull ghcr.io/lazevedo-devops/dayio-orderservice:main
+```
+
+```Run```
+
+```code
+docker run -it -p 8080:8080 ghcr.io/lazevedo-devops/dayio-orderservice:main
+```
+
+After that the container will create a HTTP Tunnel to your locahost listening at 8080 port.
+
 #### Questions and Feedback?
 
 Find me on the Linkedin as lazevedo-devops or feel free to contact me through mail lazevedo@darkscreen.io.
