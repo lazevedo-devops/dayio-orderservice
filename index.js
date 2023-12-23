@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const PORT = 8080;
-
+const apiMetrics = require('prometheus-api-metrics');
+app.use(apiMetrics())
 app.use(express.text());
 
 app.listen(PORT, () => {
